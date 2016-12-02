@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+  <!-- Material Design Lite -->
+  <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <!-- Material Design icon font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div class="content-grid mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--2-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="random()">
+        Random article
+      </button>
+
+      <form ng-submit="search()">
+<div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="sample1">
+    
+    <label id="wLabel" class="mdl-textfield__label right" for="sample1">Search Wikipedia</label>
+    <i class="material-icons">search</i>
+  </div>
+
+      </form>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+  </div>
+<div class="content-grid mdl-grid">
+  <div ng-hide="query" ng-repeat="result in results" class="mdl-cell mdl-cell--4-col">
+    <card></card>
+  </div>
+</div>
+  
+
+  <iframe align="middle" ng-show="query" ng-src="{{ randomPage }}">
+    <p>Your browser does not support iframes.</p>
+  </iframe>
+
+</body>
+
+</html>
