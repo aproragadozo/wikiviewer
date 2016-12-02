@@ -1,0 +1,21 @@
+
+h2, p {
+  margin-top: 0;
+}
+iframe {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  border: 1px solid black;
+}
+.material-icons {
+  position: absolute;
+  top: 22px;
+  left: -13px;
+}
+#sample1 {
+  text-align: right;
+}
+#wLabel.right{
+  text-align: right;
+}
